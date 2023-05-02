@@ -14,13 +14,12 @@ const LogIn = () => {
   const navigate = useNavigate();
   const { register, handleSubmit } = useForm<LogInData>();
   const { isSignedIn } = useSelector((state: RootState) => state.logIn);
-  const trueValue = 'true';
+  const trueValue = "true";
 
   const onSubmit = async (data: LogInData) => {
     try {
       const url = "https://6448e4bfb88a78a8f0f6d394.mockapi.io/users";
       const response = await axios.get(url);
-      console.log(response)
       const users = response.data;
       const matchedUser = users.find(
         (user: LogInData) =>
@@ -49,7 +48,7 @@ const LogIn = () => {
   return (
     <div className={styles.logInBody}>
       <div className={styles.componentLogIn}>
-      <img
+        <img
           className={styles.component1Icon1}
           alt=""
           src={registration_wallpaper}
@@ -116,7 +115,7 @@ const LogIn = () => {
             </Link>
           </span>
         </div>
-       
+
         <div className={styles.forgotPassword}>Forgot password ?</div>
       </div>
     </div>

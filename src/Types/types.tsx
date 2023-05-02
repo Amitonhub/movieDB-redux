@@ -11,7 +11,7 @@ export interface SignUpState {
 export type SignUpData = {
   name: string;
   email: string;
-  password: string
+  password: string;
   userid: string;
 };
 

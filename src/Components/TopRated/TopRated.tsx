@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Types/types";
 import { getMoviesToDisplayTopRated } from "./TopRatedUtils";
 import { setSearchQuery } from "../../Actions/SidebarActions/SidebarActions";
-import { localWishlistData } from "../../LocalStorageUtils/LocalStorageUtils";
 
 export default function RecentlyAdded() {
   const movies = useSelector((state: RootState) => state.movies.movies);
@@ -23,7 +22,7 @@ export default function RecentlyAdded() {
   }, []);
 
   useEffect(() => {
-    const wishlistData = localWishlistData;
+    const wishlistData = localStorage.getItem("wishlist") || "[]";
     const movieIdsInWishlist = wishlistData
       ? JSON.parse(wishlistData).map((movie: { id: number }) => movie.id)
       : [];

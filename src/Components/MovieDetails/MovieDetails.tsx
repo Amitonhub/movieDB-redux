@@ -3,15 +3,14 @@ import { useParams } from "react-router-dom";
 import Sidebar from "../Home/Sidebar/Sidebar";
 import styles from "./MovieDetails.module.css";
 import MovieRatings from "./MovieRatings/MovieRatings";
-import { CastMember } from "../../Types/HomeTypes";
+import { CastMember} from "../../Types/HomeTypes";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovieDetails } from "../../Actions/MovieDetailsActions/MovieDetailsActions";
 import { RootState } from "../../Types/types";
-import { Spinner } from "react-bootstrap";
 
 export default function MovieDetails() {
   const { id } = useParams();
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const movie = useSelector((state: RootState) => state.movieDetails[0]);
 
   useEffect(() => {
@@ -21,7 +20,7 @@ export default function MovieDetails() {
           `https://api.tvmaze.com/shows/${id}?embed=cast`
         );
         const movieJson = await movieData.json();
-        dispatch(fetchMovieDetails(movieJson));
+        dispatch(fetchMovieDetails(movieJson))
       } catch (error) {
         console.error("Error fetching movie details:", error);
       }
@@ -30,8 +29,8 @@ export default function MovieDetails() {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, [dispatch, id]);
 
-  function handleSearch() {
-    return null;
+  function handleSearch(query: string) {
+    return;
   }
 
   return (
@@ -118,9 +117,7 @@ export default function MovieDetails() {
             </div>
           </div>
         ) : (
-          <Spinner animation="border" role="status">
-            <span className="visually-hidden">Loading...</span>
-          </Spinner>
+          <p>Loading...</p>
         )}
       </div>
     </>

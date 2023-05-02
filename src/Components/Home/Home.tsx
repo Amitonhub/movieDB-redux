@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Footer from "./Footer/Footer";
-import styles from './Home.module.css';
+import styles from "./Home.module.css";
 import Sidebar from "./Sidebar/Sidebar";
 import HeadCard from "../HeadCard/HeadCard";
 import { useNavigate } from "react-router";
@@ -13,13 +13,10 @@ import { setSearchQuery } from "../../Actions/SidebarActions/SidebarActions";
 import { RootState } from "../../Types/types";
 import { getMoviesToDisplayRecent } from "../RecentlyAdded/RecentlyAddedUtils";
 import { getMoviesToDisplayTopRated } from "../TopRated/TopRatedUtils";
-import React from "react";
-import { localWishlistData } from "../../LocalStorageUtils/LocalStorageUtils";
 
 const Home = () => {
   const movies = useSelector((state: RootState) => state.movies.movies);
   const searchQuery = useSelector( (state: RootState) => state.sidebar.searchQuery);
-  const user = useSelector( (state: RootState) => state.logIn.isSignedIn);
   const moviesToDisplayRecent = getMoviesToDisplayRecent(movies, searchQuery);
   const topRatedMovies = getMoviesToDisplayTopRated(movies, searchQuery);
   const { handleAddToWishlist } = useHandleAddToWishlist();
@@ -27,20 +24,16 @@ const Home = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if(!user){
-      alert('please Log in first!')
-      navigate('/login');
-    }
     async function getMovies() {
       const result = await fetchMovies();
       dispatch(setMovies(result));
       console.log(result);
     }
     getMovies();
-  }, [dispatch, navigate, user]);
+  }, [dispatch]);
 
   useEffect(() => {
-    const wishlistData = localWishlistData;
+    const wishlistData = localStorage.getItem("wishlist") || "[]";
     const movieIdsInWishlist = wishlistData
       ? JSON.parse(wishlistData).map((movie: { id: number }) => movie.id)
       : [];
