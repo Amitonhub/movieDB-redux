@@ -1,18 +1,15 @@
-import { Navigate, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../Types/types";
+import { Navigate, Route, RouteProps as ReactRouterProps } from "react-router-dom";
 
-interface RouteProps {
-  path: string;
+type PrivateRouteProps = ReactRouterProps & {
   element: React.ReactNode;
-}
+};
 
-interface PrivateRouteProps extends RouteProps {
-  element: React.ReactElement;
-}
+const PrivateRoute: React.FC<PrivateRouteProps> = ({ element, ...rest }) => {
+  const { isSignedIn } = useSelector((state: RootState) => state.logIn);
 
-const PrivateRoute = ({ element, ...rest }: PrivateRouteProps) => {
-  const isLoggedIn = localStorage.getItem("signedIn");
-  
-  return isLoggedIn ? (
+  return isSignedIn ? (
     <Route {...rest} element={element} />
   ) : (
     <Navigate to="/login" replace />

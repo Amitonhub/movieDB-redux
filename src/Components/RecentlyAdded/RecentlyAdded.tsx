@@ -11,7 +11,7 @@ import { setSearchQuery } from "../../Actions/SidebarActions/SidebarActions";
 import StarIcon from "../StarIcon/StarIcon";
 
 export default function RecentlyAdded() {
-  const movies = useSelector((state: RootState) => state.movies);
+  const movies = useSelector((state: RootState) => state.movies.movies);
   const searchQuery = useSelector((state: RootState) => state.sidebar.searchQuery);
   const navigate = useNavigate()
   const moviesToDisplayRecent = getMoviesToDisplayRecent(movies, searchQuery);
@@ -25,6 +25,7 @@ export default function RecentlyAdded() {
     getMovies();
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
+
 
   function handleSearch(query: string) {
     dispatch(setSearchQuery(query));

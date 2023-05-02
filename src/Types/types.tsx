@@ -22,10 +22,14 @@ export type LogInData = {
   userId: string;
 };
 
+export type HomeState = {
+  movies: Movie[];
+};
+
 export interface RootState {
   logIn: LoginState;
   sidebar: SidebarState;
-  movies: Movie[];
+  movies: HomeState;
   wishlist: Movie[];
   movieDetails: Movie[];
 }
