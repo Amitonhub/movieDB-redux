@@ -1,0 +1,169 @@
+.filmThumbIcon {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(6, 1fr);
+  top: 6.69rem;
+  left: calc(50% - 616px);
+  border-radius: 6.65px;
+  right: calc(138% - 616px);
+  bottom: calc(83% - 616px);
+  object-fit: cover;
+  grid-row-gap: 8%;
+}
+
+.filmImage {
+  width: 11.5rem;
+  margin-right: 2rem;
+  height: 17.5rem;
+  border-radius: 6.65px;
+  transition: transform 0.5s;
+}
+
+.filmImage:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.sectionTitle {
+  position: absolute;
+  top: 3.06rem;
+  left: calc(50% - 616px);
+  line-height: 1.38rem;
+  font-weight: 500;
+  display: inline-block;
+  width: 77rem;
+  height: 3.63rem;
+}
+
+.topRatedTitle {
+  position: absolute;
+  top: 2.06rem;
+  left: calc(50% - 616px);
+  line-height: 1.38rem;
+  font-weight: 500;
+  display: inline-block;
+  width: 77rem;
+  height: 3.63rem;
+}
+
+.containerFilms1 {
+  position: absolute;
+  width: calc(100% - 99px);
+  top: 69%;
+  right: 27.19rem;
+  left: 3rem;
+  height: 44.69rem;
+  font-family: "Work Sans";
+}
+
+.containerFilms11 {
+  position: absolute;
+  top: 36rem;
+  right: 3.13rem;
+  left: 3.06rem;
+  font-family: "Work Sans";
+}
+
+.containerFilms1Parent {
+  position: absolute;
+  width: calc(100% - 109px);
+  top: 0;
+  right: 0;
+  left: 6.81rem;
+  height: 123.38rem;
+  text-align: left;
+  font-size: var(--section-title-desktop-20-size);
+}
+
+.bodyContainer {
+  position: relative;
+  background-color: var(--color-gray-100);
+  width: 100%;
+  height: 155.75rem;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+  font-family: var(--paragraph-desktop-15);
+}
+
+.pagination {
+  justify-content: center;
+  display: flex;
+  margin-top: 53%;
+}
+
+.paginationTopRated {
+  justify-content: center;
+  display: flex;
+  margin-top: 50%;
+}
+
+.pageButton {
+  background-color: var(--color-gray-200);
+  color: red;
+  border: none;
+  padding: 0.7rem 1.1rem;
+  margin: 0 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 2rem;
+}
+
+.faArrowRight,
+.faArrowLeft {
+  color: red;
+}
+
+.faArrowRight:hover,
+.faArrowLeft:hover {
+  color: black;
+}
+
+.pageButton:hover {
+  background-color: red;
+  color: black;
+}
+
+.filmThumbContainer {
+  width: fit-content;
+}
+
+.filmThumbContainer:hover .starIcon {
+  opacity: 1;
+}
+
+.star {
+  opacity: 0;
+  z-index: 3;
+  position: sticky;
+  bottom: 78%;
+  cursor: pointer;
+  font-size: large;
+}
+
+.filmThumbContainer:hover .star {
+  opacity: 1;
+}
+
+.recentlyMore {
+  position: relative;
+  margin-top: 3.2%;
+  width: fit-content;
+  left: 76rem;
+}
+
+.recentlyMore:hover {
+  cursor: pointer;
+}
+
+.TopRatedMore{
+  position: relative;
+  margin-top: 3.2%;
+  width: fit-content;
+  left: 76rem;
+}
+
+.TopRatedMore:hover {
+  cursor: pointer;
+}

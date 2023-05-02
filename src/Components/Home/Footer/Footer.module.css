@@ -1,0 +1,155 @@
+.containerPromotion {
+  position: absolute;
+  width: 108%;
+  right: 0;
+  bottom: 0;
+  left: -8%;
+  top: 111%;
+  background-color: var(--color-gray-300);
+  height: 19.6%;
+  z-index: 5;
+}
+
+.gifCinemaIcon,
+.btnSubFrame {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+}
+
+.gifCinemaIcon {
+  right: 0.06rem;
+  max-height: 100%;
+  width: 31.25rem;
+  object-fit: cover;
+}
+
+.btnSubFrame {
+  width: 121%;
+  right: 0;
+  left: 0;
+  height: 120%;
+  border-radius: 32.45px;
+  border: 0.8px solid var(--color-white);
+  box-sizing: border-box;
+  background: black;
+}
+
+.stayConnectedText {
+  position: absolute;
+  top: 41px;
+  left: calc(50% - 281px);
+  width: 35.13rem;
+  height: 8.63rem;
+  text-align: left;
+  font-size: var(--paragraph-desktop-15-size);
+}
+
+.stayConnected {
+  position: absolute;
+  top: 50%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 878px);
+  right: 45rem;
+  height: 13.75rem;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .stayConnected {
+    position: static;
+    transform: none;
+  }
+}
+
+.text {
+  position: absolute;
+  top: calc(54% - 11px);
+  left: calc(53% - 25.5px);
+  line-height: 1.38rem;
+  letter-spacing: 0.06rem;
+}
+
+.btnSubmit {
+  position: absolute;
+  top: 0.38rem;
+  left: 16.75rem;
+  width: 6.06rem;
+  height: 1.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.email {
+  line-height: 1.63rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  height: 2.13rem;
+  border: none;
+  width: 75%;
+  box-sizing: border-box;
+  font-size: var(--paragraph-desktop-15-size);
+  background: var(--color-gray-300);
+}
+
+.emailInput,
+.underline {
+  position: absolute;
+  left: 0;
+  width: 15.63rem;
+}
+
+.underline {
+  top: 2.19rem;
+  background: var(--color-white);
+  height: 0.06rem;
+}
+
+.email::placeholder {
+  background-color: var(--color-gray-300);
+}
+
+.emailInput {
+  top: 0;
+  height: 2.25rem;
+  text-align: left;
+  font-size: var(--paragraph-desktop-15-size);
+}
+
+.stayConnectedForm {
+  position: absolute;
+  top: 11.5rem;
+  left: calc(50% - 281px);
+  width: 21.94rem;
+  height: 2.25rem;
+}
+
+.paragraph,
+.title {
+  position: flex;
+  left: 0;
+  display: inline-block;
+}
+.paragraph {
+  top: 4.13rem;
+  line-height: 1.63rem;
+  font-weight: 300;
+  width: 35.13rem;
+  height: 4.5rem;
+}
+.title {
+  font-size: var(--medium-headline-desktop-40-size);
+  font-weight: 800;
+}
+
+.fromCultClassics {
+  margin: 0;
+}

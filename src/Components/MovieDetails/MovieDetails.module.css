@@ -1,0 +1,224 @@
+.movieDetailsContainer {
+  position: relative;
+  background-color: #a03a3a;
+  height: 68rem;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+  font-family: var(--paragraph-desktop-15);
+  margin-left: 6.8%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: initial;
+  max-height: max-content;
+  scroll-behavior: smooth;
+}
+
+.sectionTitle {
+  position: absolute;
+  top: 3.06rem;
+  left: calc(50% - 616px);
+  line-height: 1.38rem;
+  font-weight: 500;
+  display: inline-block;
+  font-size: revert;
+  font-family: "Anton";
+  font-size: 3rem;
+}
+
+.filmThumbIcon {
+  display: flex;
+  position: absolute;
+  grid-template-columns: repeat(6, 1fr);
+  top: 2.69rem;
+  left: calc(50% - 616px);
+  border-radius: 6.65px;
+  right: calc(138% - 616px);
+  bottom: calc(83% - 616px);
+  object-fit: cover;
+  grid-row-gap: 8%;
+}
+
+.filmThumbContainer {
+  width: fit-content;
+}
+
+.movieDetailsBody {
+  background-color: var(--color-gray-300);
+}
+
+.filmImage {
+  width: 14.5rem;
+  margin-right: 2rem;
+  height: 20.5rem;
+  border-radius: 6.65px;
+  transition: transform 0.5s;
+  margin-top: 40%;
+}
+
+.filmImage:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.movieTitle {
+  width: max-content;
+  color: #1a1916;
+  font-family: "Anton";
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+.showInfoTitle {
+  margin-top: 9%;
+  width: max-content;
+  right: -2rem;
+  bottom: 12rem;
+  margin-right: 77%;
+  color: black;
+  position: absolute;
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.starringTitle {
+  font-family: Poppins, sans-serif;
+  margin-top: 13%;
+  width: max-content;
+  margin-right: 75%;
+}
+
+.showInfoCategories {
+  margin-right: 4rem;
+  width: fit-content;
+  top: -1rem;
+  position: relative;
+}
+
+.schedule {
+  padding-right: 2rem;
+}
+
+.scheduleData {
+  position: absolute;
+  left: 16rem;
+  top: 30%;
+  font-size: larger;
+  letter-spacing: 1px;
+}
+
+.streamedOnData {
+  position: absolute;
+  left: 16rem;
+  top: 6%;
+  font-size: larger;
+  letter-spacing: 1px;
+  width: max-content;
+}
+
+.statusData {
+  position: absolute;
+  left: 16rem;
+  top: 54%;
+  font-size: larger;
+  letter-spacing: 1px;
+}
+
+.genresData {
+  position: absolute;
+  left: 16rem;
+  top: 78%;
+  font-size: larger;
+  letter-spacing: 1px;
+  width: max-content;
+}
+
+.status {
+  padding-right: 4rem;
+}
+
+.genres {
+  padding-right: 3.7rem;
+}
+
+.starringHeading {
+  position: absolute;
+  bottom: 15rem;
+  color: black;
+  font-family: Poppins, sans-serif;
+  left: 37rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.starring {
+}
+
+.castContainer {
+  display: flex;
+}
+
+.castItem {
+  margin-right: 10px;
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.castImage {
+  width: 50px;
+  height: 50px;
+  left: 0rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.castName {
+  width: max-content;
+  padding-left: 15rem;
+  padding-top: 2px;
+  padding-bottom: 0px;
+  margin: 0;
+  position: relative;
+  top: 11px;
+  color: var(--color-gray-200);
+}
+
+.starringSpan {
+  left: 37rem;
+  top: 72%;
+  position: absolute;
+  width: max-content;
+}
+
+.starringUnderline {
+  background: #393333;
+  height: 0.06rem;
+  width: 100%;
+  position: relative;
+  margin-top: 6%;
+}
+
+.movieSummary {
+  width: 52rem;
+  font-family: Poppins, sans-serif;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-align: left;
+}
+.underline {
+  background: #393333;
+  height: 0.06rem;
+  width: 300%;
+}
+
+.showInfoContainer {
+  display: flex;
+  top: 28rem;
+  padding-top: 7rem;
+  left: 0rem;
+  position: absolute;
+  padding-right: 23rem;
+  font-family: Poppins, sans-serif;
+  color: var(--color-gray-200);
+}

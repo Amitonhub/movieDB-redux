@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=icons-pack:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+body::-webkit-scrollbar {
+  width: 0; 
+}
+
+#root{
+  background: #131313;
+}
+
+:root {
+  /* fonts */
+  --font-icons-pack: icons-pack;
+  --medium-headline-tablet-30: "Work Sans";
+  --headline-tablet-50: Anton;
+  --font-inter: Inter;
+
+  /* font sizes */
+  --font-size-sm: 0.88rem;
+  --medium-headline-tablet-30-size: 1.88rem;
+  --paragraph-tablet-11-size: 0.69rem;
+  --small-text-desktop-12-size: 0.75rem;
+  --section-title-tablet-17-size: 1.06rem;
+  --headline-tablet-50-size: 3.13rem;
+  --small-text-tablet-10-size: 0.63rem;
+  --section-title-mobile-16-size: 1rem;
+  --font-size-13xl: 2rem;
+  --paragraph-desktop-15-size: 0.94rem;
+  --headline-desktop-80-size: 5rem;
+  --section-title-desktop-20-size: 1.25rem;
+  --medium-headline-desktop-40-size: 2.5rem;
+  --font-size-lg: 1.13rem;
+  --medium-headline-mobile-25-size: 1.56rem;
+  --small-text-mobile-8-size: 0.5rem;
+
+  /* Colors */
+  --color-gray-100: #232323;
+  --color-gray-200: #131313;
+  --color-gray-300: #080808;
+  --color-white: #fff;
+  --color-dimgray: #747474;
+  --color-tomato: #ff4e4e;
+  --color-black: #000;
+  --color-darkslategray-100: #3a3a3a;
+  --color-darkslategray-200: #383838;
+  --color-darkslategray-300: #373737;
+  --color-darkgray: #aaa;
+
+  /* border radiuses */
+  --br-13xl-5: 32.5px;
+  --br-6xs-7: 6.7px;
+  --br-7xs: 6px;
+}

@@ -1,0 +1,74 @@
+.wishlistContainer {
+  position: relative;
+  background-color: var(--color-gray-100);
+  height: 49rem;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+  font-family: var(--paragraph-desktop-15);
+  margin-left: 6.8%;
+}
+
+.sectionTitle {
+  position: absolute;
+  top: 3.06rem;
+  left: calc(50% - 616px);
+  line-height: 1.38rem;
+  font-weight: 500;
+  display: inline-block;
+  font-size: revert;
+}
+
+.filmThumbIcon {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(6, 1fr);
+  top: 6.69rem;
+  left: calc(50% - 616px);
+  border-radius: 6.65px;
+  right: calc(138% - 616px);
+  bottom: calc(83% - 616px);
+  object-fit: cover;
+  grid-row-gap: 8%;
+}
+
+.filmThumbContainer {
+ 
+  width: fit-content;
+  height: fit-content;
+ 
+}
+.filmThumbContainer:hover .remove {
+  opacity: 1;
+}
+
+.wishlistBody {
+  background-color: var(--color-gray-300);
+}
+
+.filmImage {
+  width: 11.5rem;
+  margin-right: 2rem;
+  height: 17.5rem;
+  border-radius: 6.65px;
+  transition: transform 0.5s;
+}
+
+.filmImage:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.remove{
+    opacity: 0;
+    z-index: 3;
+    bottom: 78%;
+    cursor: pointer;
+    bottom: 39rem;
+    position: sticky;
+    padding-right: 9rem;
+    margin-right: 2rem;
+    color: white;
+    font-size: large;
+}

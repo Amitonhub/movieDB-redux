@@ -1,0 +1,285 @@
+.signInRectangle1 {
+  position: absolute;
+  height: 100%;
+  width: 41.72%;
+  top: 0;
+  right: 58.28%;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-white);
+}
+
+.signInCreateAnAccount,
+.signInLetsGetStarted {
+  position: absolute;
+  left: 4.53%;
+  color: var(--color-black);
+  display: inline-block;
+}
+
+.signInCreateAnAccount {
+  width: 22.19%;
+  top: 11.54%;
+  font-size: var(--font-size-13xl);
+  font-weight: 600;
+}
+
+.signInLetsGetStarted {
+  width: 22.66%;
+  top: 17.91%;
+  font-weight: 500;
+}
+
+.signInNameInputChild {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: none;
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+.signInEmailInputChild {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: none;
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+.signInPassword {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: none;
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+.signInPasswordInput1::placeholder {
+  position: absolute;
+  width: 100%;
+  top: 35.59%;
+  left: 5.97%;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.signInNameInput::placeholder {
+  position: absolute;
+  width: 9.55%;
+  top: 35.59%;
+  left: 5.97%;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.signInNameInput {
+  position: absolute;
+  height: 7.09%;
+  width: 32.73%;
+  top: 30.29%;
+  right: 62.73%;
+  bottom: 62.62%;
+  left: 4.53%;
+}
+
+.signInNameInput:focus {
+  left: 4.53%;
+}
+
+.signInEmailInput2::placeholder {
+  position: absolute;
+  width: 9.55%;
+  top: 35.59%;
+  left: 5.97%;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.signInEmailInput2 {
+  position: absolute;
+  height: 7.09%;
+  width: 32.73%;
+  top: 41.71%;
+  right: 62.73%;
+  bottom: 51.2%;
+  left: 4.53%;
+}
+
+.password1 {
+  position: absolute;
+  width: 15.75%;
+  top: 35.59%;
+  left: 5.97%;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.signInPasswordInput1 {
+  position: absolute;
+  height: 7.09%;
+  width: 32.73%;
+  top: 52.16%;
+  right: 62.73%;
+  bottom: 40.75%;
+  left: 4.53%;
+}
+
+.signInSubmit {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-7xs);
+  background-color: var(--color-darkslategray-100);
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.06);
+}
+
+.signInCreateAccount {
+  color: var(--color-white);
+  position: absolute;
+  width: 28.4%;
+  top: 33.9%;
+  left: 35.8%;
+  font-weight: 600;
+  font-size: initial;
+  display: inline-block;
+}
+
+.signInSubmitButton1 {
+  position: absolute;
+  height: 7.09%;
+  width: 32.73%;
+  top: 64.06%;
+  right: 62.73%;
+  bottom: 28.85%;
+  left: 4.53%;
+  text-align: center;
+  font-size: var(--section-title-mobile-16-size);
+  color: var(--color-white);
+}
+
+.signInGoogleButtonItem {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-7xs);
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.06);
+  border: 3px solid var(--color-darkslategray-100);
+  box-sizing: border-box;
+}
+
+.signInGoogleIcon {
+  position: absolute;
+  height: 42.37%;
+  width: 5.97%;
+  top: 28.81%;
+  right: 67.3%;
+  bottom: 28.81%;
+  left: 26.73%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.signInGoogleText {
+  font-size: var(--section-title-mobile-16-size);
+  color: var(--color-darkslategray-100);
+  position: absolute;
+  width: 33.17%;
+  top: 33.9%;
+  left: 36.28%;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.signInGoogleButton {
+  position: absolute;
+  height: 7.09%;
+  width: 32.73%;
+  top: 73.08%;
+  right: 62.73%;
+  bottom: 19.83%;
+  left: 4.53%;
+  font-size: var(--section-title-mobile-16-size);
+  color: var(--color-darkslategray-200);
+}
+
+.signInLogIn1 {
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+}
+
+.signInLogIn {
+  color: var(--color-black);
+}
+
+.signInAlreadyHaveAnContainer {
+  position: absolute;
+  width: 19.61%;
+  top: 89.06%;
+  left: 11.09%;
+  font-size: var(--section-title-mobile-16-size);
+  text-align: center;
+  display: inline-block;
+  color: var(--color-darkslategray-300);
+}
+
+.signInComponentIcon {
+  position: absolute;
+  height: 100%;
+  width: 78.28%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 41.72%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.signInComponent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90rem;
+  height: 52rem;
+}
+
+.signInMacbookAir {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 52rem;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--color-darkgray);
+  font-family: var(--font-inter);
+}
+
+#signInNameInput,
+#emailInput,
+#signInPasswordInput {
+  border: none;
+}

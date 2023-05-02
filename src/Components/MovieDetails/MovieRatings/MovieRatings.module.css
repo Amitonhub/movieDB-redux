@@ -1,0 +1,24 @@
+.ratings{
+    display: inline-flex;
+    margin-top: 13%;
+    margin-left: -68%;
+}
+
+.filledStars{
+    color: red;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.emptyStars{
+    color: black;
+    font-size: x-large;
+    font-weight: 600;
+}
+.ratingLabel{
+    padding-left: 5%;
+    padding-top: 1.5%;
+    font-size: x-large;
+    font-family: Poppins,sans-serif;
+    font-weight: 600;
+}
