@@ -14,6 +14,7 @@ import { RootState } from "../../Types/types";
 import { getMoviesToDisplayRecent } from "../RecentlyAdded/RecentlyAddedUtils";
 import { getMoviesToDisplayTopRated } from "../TopRated/TopRatedUtils";
 import React from "react";
+import { localWishlistData } from "../../LocalStorageUtils/LocalStorageUtils";
 
 const Home = () => {
   const movies = useSelector((state: RootState) => state.movies.movies);
@@ -39,7 +40,7 @@ const Home = () => {
   }, [dispatch, navigate, user]);
 
   useEffect(() => {
-    const wishlistData = localStorage.getItem("wishlist") || "[]";
+    const wishlistData = localWishlistData;
     const movieIdsInWishlist = wishlistData
       ? JSON.parse(wishlistData).map((movie: { id: number }) => movie.id)
       : [];

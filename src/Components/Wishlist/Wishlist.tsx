@@ -5,12 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSearchQuery } from "../../Actions/SidebarActions/SidebarActions";
 import { removeMovie } from "../../Actions/WishlistActions/WIshlistAction";
 import { RootState } from "../../Types/types";
+import { localUserId } from "../../LocalStorageUtils/LocalStorageUtils";
 
 const Wishlist = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const wishlist = useSelector((state: RootState) => state.wishlist);
-  const userId = localStorage.getItem("userId");
+  const userId = localUserId;
   const filteredMovies = wishlist.filter((movie) => movie.userId === userId);
 
   function handleSearch(query: string) {

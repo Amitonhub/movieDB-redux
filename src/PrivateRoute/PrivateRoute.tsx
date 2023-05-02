@@ -1,4 +1,5 @@
 import { Navigate, Route } from "react-router-dom";
+import { localIsLoggedIn } from "../LocalStorageUtils/LocalStorageUtils";
 
 interface RouteProps {
   path: string;
@@ -10,7 +11,7 @@ interface PrivateRouteProps extends RouteProps {
 }
 
 const PrivateRoute = ({ element, ...rest }: PrivateRouteProps) => {
-  const isLoggedIn = localStorage.getItem("signedIn");
+  const isLoggedIn = localIsLoggedIn;
   
   return isLoggedIn ? (
     <Route {...rest} element={element} />
