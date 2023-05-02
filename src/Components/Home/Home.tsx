@@ -6,20 +6,19 @@ import Sidebar from "./Sidebar/Sidebar";
 import HeadCard from "../HeadCard/HeadCard";
 import { useNavigate } from "react-router";
 import { fetchMovies } from "../../Api/Api";
-import { useHandleAddToWishlist } from "../Wishlist/WishlistUtils";
 import { Movie } from "../../Types/HomeTypes";
 import { setMovies } from "../../Actions/MoviesActions/MoviesAction";
 import { setSearchQuery } from "../../Actions/SidebarActions/SidebarActions";
 import { RootState } from "../../Types/types";
 import { getMoviesToDisplayRecent } from "../RecentlyAdded/RecentlyAddedUtils";
 import { getMoviesToDisplayTopRated } from "../TopRated/TopRatedUtils";
+import StarIcon from "../StarIcon/StarIcon";
 
 const Home = () => {
   const movies = useSelector((state: RootState) => state.movies.movies);
   const searchQuery = useSelector( (state: RootState) => state.sidebar.searchQuery);
   const moviesToDisplayRecent = getMoviesToDisplayRecent(movies, searchQuery);
   const topRatedMovies = getMoviesToDisplayTopRated(movies, searchQuery);
-  const { handleAddToWishlist } = useHandleAddToWishlist();
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -32,34 +31,9 @@ const Home = () => {
     getMovies();
   }, [dispatch]);
 
-  useEffect(() => {
-    const wishlistData = localStorage.getItem("wishlist") || "[]";
-    const movieIdsInWishlist = wishlistData
-      ? JSON.parse(wishlistData).map((movie: { id: number }) => movie.id)
-      : [];
-
-    moviesToDisplayRecent.forEach((movie: Movie) => {
-      const starElement = document.getElementById(`star_${movie.id}`);
-      if (movieIdsInWishlist.includes(movie.id) && starElement) {
-        starElement.style.color = "red";
-      }
-    });
-
-    topRatedMovies.forEach((movie: Movie) => {
-      const starElement = document.getElementById(`star_${movie.id}`);
-      if (movieIdsInWishlist.includes(movie.id) && starElement) {
-        starElement.style.color = "red";
-      }
-    });
-  }, [moviesToDisplayRecent, topRatedMovies]);
-
   function handleSearch(query: string) {
     dispatch(setSearchQuery(query));
   }
-
-  const handleAddToWishlistClick = (movie: Movie, event: React.MouseEvent) => {
-    handleAddToWishlist(movie, event);
-  };
 
   function handleMovieCardClick(movieId: Movie) {
     navigate(`/movies/${movieId}`);
@@ -100,12 +74,7 @@ const Home = () => {
                   alt={movie.name}
                 />
                 <span>
-                  <i
-                    className={`${styles.star} fa-solid fa-star`}
-                    style={{ color: "white" }}
-                    onClick={(event) => handleAddToWishlistClick(movie, event)}
-                    id={`star_${movie.id}`}
-                  ></i>
+                <StarIcon movie={movie} />
                 </span>
               </div>
             ))}
@@ -132,12 +101,7 @@ const Home = () => {
                   alt={movie.name}
                 />
                 <span>
-                  <i
-                    className={`${styles.star} fa-solid fa-star`}
-                    style={{ color: "white" }}
-                    onClick={(event) => handleAddToWishlistClick(movie, event)}
-                    id={`star_${movie.id}`}
-                  ></i>
+                <StarIcon movie={movie} />
                 </span>
               </div>
             ))}

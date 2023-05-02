@@ -5,10 +5,12 @@ import {
   removeMovie,
 } from "../../Actions/WishlistActions/WIshlistAction";
 import { RootState } from "../../Types/types";
+import { useRef } from "react";
 
 export const useHandleAddToWishlist = () => {
   const dispatch = useDispatch();
   const movies = useSelector((state: RootState) => state.wishlist);
+  const starRef = useRef<HTMLSpanElement>(null);
 
   const handleAddToWishlist = (movie: Movie, event: React.MouseEvent) => {
     event.stopPropagation();
@@ -17,11 +19,18 @@ export const useHandleAddToWishlist = () => {
     let updatedWishlist = JSON.parse(existingWishlist);
     const user = localStorage.getItem("user");
     const userId = user ? JSON.parse(user).userid : null;
-    const starElement = document.getElementById(`star_${movie.id}`);
 
-    if (starElement && starElement.style.color === "red") {
+    if (starRef.current) {
+      starRef.current.style.color = "red";
+    }
+
+    if (starRef.current && starRef.current.style.color === "red") {
       dispatch(removeMovie(movie.id));
-      starElement.style.color = "white";
+
+      if (starRef.current) {
+        starRef.current.style.color = "white";
+      }
+
       const filteredWishlist = updatedWishlist.filter(
         (item: Movie) => item.id !== movie.id
       );
@@ -35,5 +44,6 @@ export const useHandleAddToWishlist = () => {
     dispatch(addMovie(updatedMovie));
   };
 
-  return { handleAddToWishlist, wishlist: movies };
+  return { handleAddToWishlist, wishlist: movies, starRef };
 };
+

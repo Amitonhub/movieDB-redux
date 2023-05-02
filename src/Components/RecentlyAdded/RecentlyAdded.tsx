@@ -1,7 +1,6 @@
 import React, { useEffect} from "react";
 import Sidebar from "../Home/Sidebar/Sidebar";
 import styles from "./RecentlyAdded.module.css";
-import { useHandleAddToWishlist } from "../Wishlist/WishlistUtils";
 import { useNavigate } from "react-router";
 import { Movie } from "../../Types/HomeTypes";
 import { getMoviesToDisplayRecent } from "./RecentlyAddedUtils";
@@ -9,10 +8,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Types/types";
 import { fetchMovies } from "../../Api/Api";
 import { setSearchQuery } from "../../Actions/SidebarActions/SidebarActions";
+import StarIcon from "../StarIcon/StarIcon";
 
 export default function RecentlyAdded() {
   const movies = useSelector((state: RootState) => state.movies.movies);
-  const { handleAddToWishlist } = useHandleAddToWishlist();
   const searchQuery = useSelector((state: RootState) => state.sidebar.searchQuery);
   const navigate = useNavigate()
   const moviesToDisplayRecent = getMoviesToDisplayRecent(movies, searchQuery);
@@ -27,28 +26,12 @@ export default function RecentlyAdded() {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
 
-  useEffect(() => {
-    const wishlistData = localStorage.getItem("wishlist") || "[]";
-    const movieIdsInWishlist = wishlistData ? JSON.parse(wishlistData).map((movie: { id: number }) => movie.id) : [];
-
-    moviesToDisplayRecent.forEach((movie: Movie) => {
-      const starElement = document.getElementById(`star_${movie.id}`);
-      if (movieIdsInWishlist.includes(movie.id) && starElement) {
-        starElement.style.color = "red";
-      }
-    });
-  }, [moviesToDisplayRecent]);
-
   function handleSearch(query: string) {
     dispatch(setSearchQuery(query));
     }
 
   const handleMovieCardClick = (movieId: number) => {
     navigate(`/movies/${movieId}`);
-  };
-
-  const handleAddToWishlistClick = (movie: Movie, event: React.MouseEvent) => {
-    handleAddToWishlist(movie, event);
   };
 
   return (
@@ -66,12 +49,7 @@ export default function RecentlyAdded() {
                   alt={movie.name}
                 />
                 <span>
-                  <i
-                    className={`${styles.star} fa-solid fa-star`}
-                    style={{ color: "white" }}
-                    onClick={(event) => handleAddToWishlistClick(movie, event)}
-                    id={`star_${movie.id}`}
-                  ></i>
+                <StarIcon movie={movie} />
                 </span>
               </div>
             ))}

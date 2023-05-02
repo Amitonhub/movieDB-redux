@@ -1,19 +1,17 @@
 import React, { useEffect } from "react";
 import Sidebar from "../Home/Sidebar/Sidebar";
 import styles from "./TopRated.module.css";
-import { useHandleAddToWishlist } from "../Wishlist/WishlistUtils";
-import { useNavigate } from "react-router";
-import { Movie } from "../../Types/HomeTypes";
+import { useNavigate } from "react-router"
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Types/types";
 import { getMoviesToDisplayTopRated } from "./TopRatedUtils";
 import { setSearchQuery } from "../../Actions/SidebarActions/SidebarActions";
+import StarIcon from "../StarIcon/StarIcon";
 
 export default function RecentlyAdded() {
   const movies = useSelector((state: RootState) => state.movies.movies);
   const searchQuery = useSelector((state: RootState) => state.sidebar.searchQuery);
   const moviesToDisplayTopRated = getMoviesToDisplayTopRated(movies, searchQuery);
-  const { handleAddToWishlist } = useHandleAddToWishlist();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -43,10 +41,6 @@ export default function RecentlyAdded() {
     navigate(`/movies/${movieId}`);
   };
 
-  const handleAddToWishlistClick = (movie: Movie, event: React.MouseEvent) => {
-    handleAddToWishlist(movie, event);
-  };
-
   return (
     <>
       <Sidebar onSearch={handleSearch} />
@@ -62,12 +56,7 @@ export default function RecentlyAdded() {
                   alt={movie.name}
                 />
                 <span>
-                  <i
-                    className={`${styles.star} fa-solid fa-star`}
-                    style={{ color: "white" }}
-                    onClick={(event) => handleAddToWishlistClick(movie, event)}
-                    id={`star_${movie.id}`}
-                  ></i>
+                <StarIcon movie={movie} />
                 </span>
               </div>
             ))}
