@@ -15,7 +15,7 @@ import { getMoviesToDisplayTopRated } from "../TopRated/TopRatedUtils";
 import StarIcon from "../StarIcon/StarIcon";
 
 const Home = () => {
-  const movies = useSelector((state: RootState) => state.movies.movies);
+  const movies = useSelector((state: RootState) => state.movies);
   const searchQuery = useSelector( (state: RootState) => state.sidebar.searchQuery);
   const moviesToDisplayRecent = getMoviesToDisplayRecent(movies, searchQuery);
   const topRatedMovies = getMoviesToDisplayTopRated(movies, searchQuery);

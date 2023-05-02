@@ -9,7 +9,7 @@ import { setSearchQuery } from "../../Actions/SidebarActions/SidebarActions";
 import StarIcon from "../StarIcon/StarIcon";
 
 export default function RecentlyAdded() {
-  const movies = useSelector((state: RootState) => state.movies.movies);
+  const movies = useSelector((state: RootState) => state.movies);
   const searchQuery = useSelector((state: RootState) => state.sidebar.searchQuery);
   const moviesToDisplayTopRated = getMoviesToDisplayTopRated(movies, searchQuery);
   const navigate = useNavigate();

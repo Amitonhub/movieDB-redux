@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../Types/types";
 import { useHandleAddToWishlist } from "../Wishlist/WishlistUtils";
 import { Movie } from "../../Types/HomeTypes";
-import styles from "./StarIcon.module.css";
+import styles from "../Home/Home.module.css";
 import { useRef } from "react";
 
 interface StarIconProps {

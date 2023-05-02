@@ -46,4 +46,3 @@ export const useHandleAddToWishlist = () => {
 
   return { handleAddToWishlist, wishlist: movies, starRef };
 };
-
