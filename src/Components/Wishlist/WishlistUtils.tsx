@@ -24,24 +24,36 @@ export const useHandleAddToWishlist = () => {
       starRef.current.style.color = "red";
     }
 
+    const isMovieAdded = movies.some(
+      (item: Movie) => item.id === movie.id && item.userId === userId
+    );
+
     if (starRef.current && starRef.current.style.color === "red") {
+      const filteredWishlist = updatedWishlist.filter(
+        (item: Movie) => item.id !== movie.id || item.userId !== userId
+      );
+      localStorage.setItem("wishlist", JSON.stringify(filteredWishlist));
       dispatch(removeMovie(movie.id));
 
       if (starRef.current) {
         starRef.current.style.color = "white";
       }
 
-      const filteredWishlist = updatedWishlist.filter(
-        (item: Movie) => item.id !== movie.id
-      );
-      localStorage.setItem("wishlist", JSON.stringify(filteredWishlist));
       return;
     }
 
-    const updatedMovie = { ...movie, userId };
-    updatedWishlist.push(updatedMovie);
-    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
-    dispatch(addMovie(updatedMovie));
+    if (!isMovieAdded) {
+      const updatedMovie = { ...movie, userId };
+      updatedWishlist.push(updatedMovie);
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+      dispatch(addMovie(updatedMovie));
+    } else {
+      const filteredWishlist = updatedWishlist.filter(
+        (item: Movie) => item.id !== movie.id || item.userId !== userId
+      );
+      localStorage.setItem("wishlist", JSON.stringify(filteredWishlist));
+      dispatch(removeMovie(movie.id));
+    }
   };
 
   return { handleAddToWishlist, wishlist: movies, starRef };
