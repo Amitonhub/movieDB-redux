@@ -1,4 +1,4 @@
-import { Movie } from "../../Types/HomeTypes";
+import { Movie } from "../../Types/MovieTypes";
 import {
   ADD_TO_WISHLIST,
   REMOVE_FROM_WISHLIST,

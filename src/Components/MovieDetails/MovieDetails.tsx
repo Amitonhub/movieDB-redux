@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Sidebar from "../Home/Sidebar/Sidebar";
 import styles from "./MovieDetails.module.css";
 import MovieRatings from "./MovieRatings/MovieRatings";
-import { CastMember} from "../../Types/HomeTypes";
+import { CastMember} from "../../Types/MovieTypes";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchMovieDetails } from "../../Actions/MovieDetailsActions/MovieDetailsActions";
 import { RootState } from "../../Types/types";

@@ -51,3 +51,7 @@ export interface CastMember {
   self: boolean;
   voice: boolean;
 }
+
+export interface StarIconProps {
+  movie: Movie;
+}

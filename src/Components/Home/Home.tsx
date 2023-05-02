@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import HeadCard from "../HeadCard/HeadCard";
 import { useNavigate } from "react-router";
 import { fetchMovies } from "../../Api/Api";
-import { Movie } from "../../Types/HomeTypes";
+import { Movie } from "../../Types/MovieTypes";
 import { setMovies } from "../../Actions/MoviesActions/MoviesAction";
 import { setSearchQuery } from "../../Actions/SidebarActions/SidebarActions";
 import { RootState } from "../../Types/types";

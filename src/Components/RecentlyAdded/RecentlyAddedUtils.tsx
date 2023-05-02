@@ -1,4 +1,4 @@
-import { Movie } from "../../Types/HomeTypes";
+import { Movie } from "../../Types/MovieTypes";
 
 export function getMoviesToDisplayRecent(movies: Movie[], searchQuery: string): Movie[] {
   let sortedMovies = [...movies];

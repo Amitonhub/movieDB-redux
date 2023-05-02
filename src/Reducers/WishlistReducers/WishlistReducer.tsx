@@ -1,6 +1,6 @@
 import { ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST } from "../../Actions/ActionTypes/WishlistActionTypes";
 import { getAllWishlistItems } from "../../LocalStorageUtils/LocalStorageUtils";
-import { Movie } from "../../Types/HomeTypes";
+import { Movie } from "../../Types/MovieTypes";
 
 
 const initialState: Movie[] = getAllWishlistItems ? JSON.parse(getAllWishlistItems) : [];

@@ -1,4 +1,4 @@
-import { Movie } from "../../Types/HomeTypes";
+import { Movie } from "../../Types/MovieTypes";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addMovie,

@@ -1,5 +1,5 @@
 import { MOVIE_DETAILS } from "../../Actions/ActionTypes/MovieDetailsActionTypes";
-import { Movie } from "../../Types/HomeTypes";
+import { Movie } from "../../Types/MovieTypes";
 
 const initialState: Movie[] = [];
 

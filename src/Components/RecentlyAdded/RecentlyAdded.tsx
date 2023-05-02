@@ -2,7 +2,7 @@ import React, { useEffect} from "react";
 import Sidebar from "../Home/Sidebar/Sidebar";
 import styles from "./RecentlyAdded.module.css";
 import { useNavigate } from "react-router";
-import { Movie } from "../../Types/HomeTypes";
+import { Movie } from "../../Types/MovieTypes";
 import { getMoviesToDisplayRecent } from "./RecentlyAddedUtils";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Types/types";

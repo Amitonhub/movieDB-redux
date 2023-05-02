@@ -1,13 +1,9 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../Types/types";
 import { useHandleAddToWishlist } from "../Wishlist/WishlistUtils";
-import { Movie } from "../../Types/HomeTypes";
+import { StarIconProps } from "../../Types/MovieTypes";
 import styles from "../Home/Home.module.css";
 import { useRef } from "react";
-
-interface StarIconProps {
-  movie: Movie;
-}
 
 const StarIcon = ({ movie }: StarIconProps) => {
   const wishlist = useSelector((state: RootState) => state.wishlist);

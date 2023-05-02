@@ -1,6 +1,6 @@
 import { LoginState } from "../Reducers/RegistrationReducers/LogInReducer";
 import { SidebarState } from "../Reducers/SidebarReducers/SidebarReducer";
-import { Movie } from "./HomeTypes";
+import { Movie } from "./MovieTypes";
 
 export interface SignUpState {
   userId: string | null;

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Movie } from "../Types/HomeTypes";
+import { Movie } from "../Types/MovieTypes";
 import { RootState, SignUpData } from "../Types/types";
 import { ThunkAction } from "redux-thunk";
 import { SignUpAction } from "../Actions/ActionTypes/SignUpActionType";
